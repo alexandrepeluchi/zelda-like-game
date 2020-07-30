@@ -4,7 +4,7 @@
 [ext_resource path="res://player/player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 7 )
+extents = Vector2( 7, 7 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "idledown"
@@ -201,13 +201,12 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 vframes = 2
 hframes = 8
-frame = 1
+frame = 15
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
