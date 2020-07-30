@@ -12,7 +12,7 @@ func _physics_process(delta):
 	movement_loop()
 	spritedir_loop()
 	
-	if is_on_wall():
+	if is_on_wall() and movedir != Vector2(0,0):
 		if spritedir == "up" and test_move(transform, Vector2(0, -1)):
 			anim_switch("push")
 		if spritedir == "down" and test_move(transform, Vector2(0, 1)):
