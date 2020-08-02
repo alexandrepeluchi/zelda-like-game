@@ -7,8 +7,7 @@ const left = Vector2(-1,0)
 const right= Vector2(1,0)
 
 func rand():
-	var random = randi() % 4 + 1
-	match random:
+	match (randi() % 4 + 1):
 		1: 
 			return up
 		2: 
