@@ -190,7 +190,7 @@ tracks/0/keys = {
 "values": [ 2, 3 ]
 }
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 7, 8 )
 
 [node name="player" type="KinematicBody2D"]
@@ -230,4 +230,4 @@ anims/walkup = SubResource( 13 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-shape = SubResource( 14 )
+shape = SubResource( 19 )
