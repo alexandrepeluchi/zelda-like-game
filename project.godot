@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "entity",
+"language": "GDScript",
+"path": "res://engine/entity.gd"
+} ]
 _global_script_class_icons={
-
+"entity": ""
 }
 
 [application]
@@ -18,6 +23,10 @@ _global_script_class_icons={
 config/name="Zelda"
 run/main_scene="res://areas/test.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+dir="*res://engine/directions.gd"
 
 [display]
 
