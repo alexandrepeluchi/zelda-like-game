@@ -13,7 +13,11 @@ var hitstun = 0
 var health = 1
 
 func movement_loop():
-	var motion = movedir.normalized() * SPEED
+	var motion
+	if hitstun == 0:
+		motion = movedir.normalized() * SPEED
+	else:
+		motion = knockdir.normalized() * SPEED * 1.5
 	move_and_slide(motion, dir.stopped)
 	
 func spritedir_loop():
