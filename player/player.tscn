@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://player/player.png" type="Texture" id=1]
 [ext_resource path="res://player/player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 7 )
+extents = Vector2( 6, 7 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "idledown"
@@ -66,7 +66,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 resource_name = "pushdown"
 loop = true
 tracks/0/type = "value"
@@ -82,7 +82,7 @@ tracks/0/keys = {
 "values": [ 8, 9 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=7]
 resource_name = "pushleft"
 loop = true
 tracks/0/type = "value"
@@ -98,7 +98,7 @@ tracks/0/keys = {
 "values": [ 14, 15 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=8]
 resource_name = "pushright"
 loop = true
 tracks/0/type = "value"
@@ -114,7 +114,7 @@ tracks/0/keys = {
 "values": [ 12, 13 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=9]
 resource_name = "pushup"
 loop = true
 tracks/0/type = "value"
@@ -130,8 +130,7 @@ tracks/0/keys = {
 "values": [ 10, 11 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "walkdown"
+[sub_resource type="Animation" id=10]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -146,8 +145,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "walkleft"
+[sub_resource type="Animation" id=11]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -162,8 +160,7 @@ tracks/0/keys = {
 "values": [ 6, 7 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "walkright"
+[sub_resource type="Animation" id=12]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -178,8 +175,7 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "walkup"
+[sub_resource type="Animation" id=13]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -194,19 +190,24 @@ tracks/0/keys = {
 "values": [ 2, 3 ]
 }
 
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 7, 8 )
+
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 2 )
+SPEED = 70
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 vframes = 2
 hframes = 8
-frame = 15
+frame = 1
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -215,11 +216,17 @@ anims/idledown = SubResource( 2 )
 anims/idleleft = SubResource( 3 )
 anims/idleright = SubResource( 4 )
 anims/idleup = SubResource( 5 )
-anims/pushdown = SubResource( 10 )
-anims/pushleft = SubResource( 11 )
-anims/pushright = SubResource( 12 )
-anims/pushup = SubResource( 13 )
-anims/walkdown = SubResource( 6 )
-anims/walkleft = SubResource( 8 )
-anims/walkright = SubResource( 9 )
-anims/walkup = SubResource( 7 )
+anims/pushdown = SubResource( 6 )
+anims/pushleft = SubResource( 7 )
+anims/pushright = SubResource( 8 )
+anims/pushup = SubResource( 9 )
+anims/walkdown = SubResource( 10 )
+anims/walkleft = SubResource( 11 )
+anims/walkright = SubResource( 12 )
+anims/walkup = SubResource( 13 )
+
+[node name="hitbox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource( 14 )
