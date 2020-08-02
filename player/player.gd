@@ -4,8 +4,9 @@ func _physics_process(_delta):
 	controls_loops()
 	movement_loop()
 	spritedir_loop()
+	damage_loop()
 	
-	if is_on_wall() and movedir != dir.center:
+	if is_on_wall() and movedir != dir.stopped:
 		if spritedir == "up" and test_move(transform, dir.up):
 			anim_switch("push")
 		if spritedir == "down" and test_move(transform, dir.down):
@@ -14,7 +15,7 @@ func _physics_process(_delta):
 			anim_switch("push")
 		if spritedir == "right" and test_move(transform, dir.right):
 			anim_switch("push")	
-	elif movedir != dir.center:
+	elif movedir != dir.stopped:
 		anim_switch("walk")
 	else:
 		anim_switch("idle")

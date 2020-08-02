@@ -66,7 +66,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=15]
 resource_name = "pushdown"
 loop = true
 tracks/0/type = "value"
@@ -82,7 +82,7 @@ tracks/0/keys = {
 "values": [ 8, 9 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=16]
 resource_name = "pushleft"
 loop = true
 tracks/0/type = "value"
@@ -98,7 +98,7 @@ tracks/0/keys = {
 "values": [ 14, 15 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=17]
 resource_name = "pushright"
 loop = true
 tracks/0/type = "value"
@@ -114,7 +114,7 @@ tracks/0/keys = {
 "values": [ 12, 13 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=18]
 resource_name = "pushup"
 loop = true
 tracks/0/type = "value"
@@ -195,6 +195,7 @@ extents = Vector2( 7, 8 )
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 2 )
+TYPE = "PLAYER"
 SPEED = 70
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -216,10 +217,10 @@ anims/idledown = SubResource( 2 )
 anims/idleleft = SubResource( 3 )
 anims/idleright = SubResource( 4 )
 anims/idleup = SubResource( 5 )
-anims/pushdown = SubResource( 6 )
-anims/pushleft = SubResource( 7 )
-anims/pushright = SubResource( 8 )
-anims/pushup = SubResource( 9 )
+anims/pushdown = SubResource( 15 )
+anims/pushleft = SubResource( 16 )
+anims/pushright = SubResource( 17 )
+anims/pushup = SubResource( 18 )
 anims/walkdown = SubResource( 10 )
 anims/walkleft = SubResource( 11 )
 anims/walkright = SubResource( 12 )
