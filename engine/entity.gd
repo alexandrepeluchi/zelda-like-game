@@ -2,24 +2,24 @@ class_name entity extends KinematicBody2D
 
 export(int) var SPEED = 0
 
-var movedir = Vector2(0,0)
+var movedir = dir.center
 
 # A direção que a sprite vai iniciar
 var spritedir = "down"
 
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
-	move_and_slide(motion, Vector2(0,0))
+	move_and_slide(motion, dir.center)
 	
 func spritedir_loop():
 	match movedir:
-		Vector2(0,-1):
+		dir.up:
 			spritedir = "up"
-		Vector2(0,1):
+		dir.down:
 			spritedir = "down"
-		Vector2(-1,0):
+		dir.left:
 			spritedir = "left"
-		Vector2(1,0):
+		dir.right:
 			spritedir = "right"
 			
 func anim_switch(animation):

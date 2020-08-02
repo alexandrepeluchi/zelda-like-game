@@ -5,16 +5,16 @@ func _physics_process(_delta):
 	movement_loop()
 	spritedir_loop()
 	
-	if is_on_wall() and movedir != Vector2(0,0):
-		if spritedir == "up" and test_move(transform, Vector2(0, -1)):
+	if is_on_wall() and movedir != dir.center:
+		if spritedir == "up" and test_move(transform, dir.up):
 			anim_switch("push")
-		if spritedir == "down" and test_move(transform, Vector2(0, 1)):
+		if spritedir == "down" and test_move(transform, dir.down):
 			anim_switch("push")
-		if spritedir == "left" and test_move(transform, Vector2(-1, 0)):
+		if spritedir == "left" and test_move(transform, dir.left):
 			anim_switch("push")
-		if spritedir == "right" and test_move(transform, Vector2(1, 0)):
+		if spritedir == "right" and test_move(transform, dir.right):
 			anim_switch("push")	
-	elif movedir != Vector2(0,0):
+	elif movedir != dir.center:
 		anim_switch("walk")
 	else:
 		anim_switch("idle")
