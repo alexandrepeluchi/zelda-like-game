@@ -10,7 +10,12 @@ func _ready():
 	$anim.connect("animation_finished", self, "destroy")
 	$anim.play(str("swing", get_parent().spritedir))
 	
-func destroy(animation):
+	if get_parent().has_method("state_swing"):
+		get_parent().state = "swing"
+	
+func destroy(_animation):
+	if get_parent().has_method("state_swing"):
+		get_parent().state = "default"
 	queue_free()
 
 
