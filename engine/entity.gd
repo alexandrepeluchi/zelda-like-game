@@ -45,3 +45,10 @@ func damage_loop():
 			hitstun = 10
 			knockdir = transform.origin - body.transform.origin
 	
+func use_item(item):
+	var newitem = item.instance()
+	newitem.add_to_group(str(newitem.get_name(), self))
+	add_child(newitem)
+	if get_tree().get_nodes_in_group(str(newitem.get_name(), self)).size() > newitem.maxamount:
+		newitem.queue_free()
+		
