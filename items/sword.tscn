@@ -167,6 +167,7 @@ rotation = 4.71239
 z_index = 1
 
 [node name="anim" type="AnimationPlayer" parent="."]
+playback_speed = 4.0
 anims/swingdown = SubResource( 1 )
 anims/swingleft = SubResource( 2 )
 anims/swingright = SubResource( 3 )
