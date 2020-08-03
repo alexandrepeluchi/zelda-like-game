@@ -19,6 +19,9 @@ func _physics_process(_delta):
 		anim_switch("walk")
 	else:
 		anim_switch("idle")
+		
+	if Input.is_action_just_pressed("a"):
+		use_item(preload("res://items/sword.tscn"))
 
 func controls_loops():
 	var UP		= Input.is_action_pressed("ui_up")
