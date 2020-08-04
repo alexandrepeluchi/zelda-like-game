@@ -16,6 +16,7 @@ func _ready():
 func destroy(_animation):
 	if get_parent().has_method("state_swing"):
 		get_parent().state = "default"
+		get_parent().SPEED = 70
 	queue_free()
 
 
