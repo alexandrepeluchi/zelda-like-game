@@ -33,7 +33,8 @@ func state_default():
 		use_item(preload("res://items/sword.tscn"))
 		
 func state_swing():
-	anim_switch("idle")
+	SPEED = 0
+	anim_switch("swordatk")
 	damage_loop()
 
 func controls_loops():
