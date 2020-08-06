@@ -130,7 +130,7 @@ tracks/0/keys = {
 "values": [ 10, 11 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=10]
 resource_name = "swordatkdown"
 loop = true
 tracks/0/type = "value"
@@ -158,7 +158,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 1 ), Vector2( 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=11]
 resource_name = "swordatkleft"
 loop = true
 tracks/0/type = "value"
@@ -186,7 +186,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -1, 0 ), Vector2( -1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=12]
 resource_name = "swordatkright"
 loop = true
 tracks/0/type = "value"
@@ -214,8 +214,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "swordatkup"
+[sub_resource type="Animation" id=13]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -242,7 +241,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, -1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=14]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -257,7 +256,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=15]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -272,7 +271,7 @@ tracks/0/keys = {
 "values": [ 6, 7 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=16]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -287,7 +286,7 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=17]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -302,7 +301,7 @@ tracks/0/keys = {
 "values": [ 2, 3 ]
 }
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 7, 8 )
 
 [node name="player" type="KinematicBody2D"]
@@ -315,7 +314,7 @@ position = Vector2( 0.5, 0 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 8
-frame = 17
+frame = 1
 __meta__ = {
 "_edit_lock_": true
 }
@@ -334,17 +333,17 @@ anims/pushdown = SubResource( 6 )
 anims/pushleft = SubResource( 7 )
 anims/pushright = SubResource( 8 )
 anims/pushup = SubResource( 9 )
-anims/swordatkdown = SubResource( 16 )
-anims/swordatkleft = SubResource( 18 )
-anims/swordatkright = SubResource( 17 )
-anims/swordatkup = SubResource( 10 )
-anims/walkdown = SubResource( 11 )
-anims/walkleft = SubResource( 12 )
-anims/walkright = SubResource( 13 )
-anims/walkup = SubResource( 14 )
+anims/swordatkdown = SubResource( 10 )
+anims/swordatkleft = SubResource( 11 )
+anims/swordatkright = SubResource( 12 )
+anims/swordatkup = SubResource( 13 )
+anims/walkdown = SubResource( 14 )
+anims/walkleft = SubResource( 15 )
+anims/walkright = SubResource( 16 )
+anims/walkup = SubResource( 17 )
 
 [node name="hitbox" type="Area2D" parent="."]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-shape = SubResource( 15 )
+shape = SubResource( 18 )

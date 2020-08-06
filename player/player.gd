@@ -33,9 +33,10 @@ func state_default():
 		use_item(preload("res://items/sword.tscn"))
 		
 func state_swing():
-	SPEED = 0
 	anim_switch("swordatk")
+	movement_loop()
 	damage_loop()
+	movedir = dir.stopped
 
 func controls_loops():
 	var UP		= Input.is_action_pressed("ui_up")
