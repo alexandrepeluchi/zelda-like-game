@@ -52,6 +52,9 @@ func damage_loop():
 		$Sprite.texture = texture_default
 		
 		if TYPE == "ENEMY" && health <= 0:
+			var death_animation = preload("res://enemies/enemy_death.tscn").instance()
+			get_parent().add_child(death_animation)
+			death_animation.global_transform = global_transform
 			.queue_free()
 		
 	for area in $hitbox.get_overlapping_areas():
