@@ -1,4 +1,4 @@
-class_name entity extends KinematicBody2D
+class_name Entity extends KinematicBody2D
 
 export(String) var TYPE = "ENEMY" 
 export(int) var SPEED = 0

@@ -1,4 +1,4 @@
-extends entity
+extends Entity
 
 const DAMAGE = 1
 

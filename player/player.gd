@@ -1,4 +1,4 @@
-extends entity
+extends Entity
 
 var state = "default"
 
