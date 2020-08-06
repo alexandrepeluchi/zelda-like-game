@@ -17,7 +17,7 @@ func movement_loop():
 	if hitstun == 0:
 		motion = movedir.normalized() * SPEED
 	else:
-		motion = knockdir.normalized() * SPEED * 1.5
+		motion = knockdir.normalized() * 125
 	move_and_slide(motion, dir.stopped)
 	
 func spritedir_loop():
