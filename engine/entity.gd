@@ -11,6 +11,12 @@ var spritedir = "down"
 
 var hitstun = 0
 var health = 1
+var texture_default = null
+var texture_hurt = null
+
+func _ready():
+	texture_default = $Sprite.texture
+	texture_hurt = load($Sprite.texture.get_path().replace(".png", "_hurt.png"))
 
 func movement_loop():
 	var motion
@@ -39,6 +45,9 @@ func anim_switch(animation):
 func damage_loop():
 	if hitstun > 0:
 		hitstun -= 1
+		$Sprite.texture = texture_hurt
+	else:
+		$Sprite.texture = texture_default
 	for area in $hitbox.get_overlapping_areas():
 		var body = area.get_parent()
 		if hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
