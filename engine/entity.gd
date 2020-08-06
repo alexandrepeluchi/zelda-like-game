@@ -3,6 +3,8 @@ class_name entity extends KinematicBody2D
 export(String) var TYPE = "ENEMY" 
 export(int) var SPEED = 0
 
+const MAXHEALTH = 2
+
 var movedir = dir.stopped
 var knockdir = dir.stopped
 
@@ -10,7 +12,7 @@ var knockdir = dir.stopped
 var spritedir = "down"
 
 var hitstun = 0
-var health = 1
+var health = MAXHEALTH
 var texture_default = null
 var texture_hurt = null
 
@@ -48,6 +50,10 @@ func damage_loop():
 		$Sprite.texture = texture_hurt
 	else:
 		$Sprite.texture = texture_default
+		
+		if TYPE == "ENEMY" && health <= 0:
+			.queue_free()
+		
 	for area in $hitbox.get_overlapping_areas():
 		var body = area.get_parent()
 		if hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
