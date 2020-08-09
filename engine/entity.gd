@@ -27,6 +27,8 @@ var texture_hurt = null
 func _ready():
 	# Prevents any action by the enemy if the camera is not in the same grid
 	if TYPE == "ENEMY":
+		# Make enemy collide with the second layer from camera StaticBody2D
+		set_collision_mask_bit(1, 1)
 		set_physics_process(false)
 	# Load default sprite
 	texture_default = $Sprite.texture
