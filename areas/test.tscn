@@ -2,7 +2,7 @@
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/wall.tres" type="TileSet" id=2]
-[ext_resource path="res://enemies/stalfos.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tiles/enemy_tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://engine/camera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/hud.tscn" type="PackedScene" id=5]
 
@@ -16,17 +16,8 @@ position = Vector2( 74.9146, 63.5272 )
 [node name="camera" parent="." instance=ExtResource( 4 )]
 current = true
 
-[node name="stalfos" parent="." instance=ExtResource( 3 )]
-position = Vector2( 81.5286, -54.3915 )
-
-[node name="stalfos2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 238.404, 78.3306 )
-
-[node name="stalfos4" parent="." instance=ExtResource( 3 )]
-position = Vector2( -97.5471, 76.5467 )
-
-[node name="stalfos3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 86.8124, 216.458 )
+[node name="enemies" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -196606, 0, 0, -196604, 0, 0, -196601, 0, 0, 196604, 0, 0, 131083, 0, 0, 262138, 0, 0, 196610, 0, 0, 196614, 0, 0, 196623, 0, 0, 327674, 0, 0, 262157, 0, 0, 393210, 0, 0, 458746, 0, 0, 393218, 0, 0, 393222, 0, 0, 393228, 0, 0, 393231, 0, 0, 524284, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
