@@ -1,6 +1,7 @@
 extends Entity
 
 var state = "default"
+var keys = 0
 
 func _physics_process(_delta):
 	# Like switch statement in other languages
@@ -9,6 +10,9 @@ func _physics_process(_delta):
 			state_default()
 		"swing":
 			state_swing()
+	
+	# Sets the maximum keys value
+	keys = min(keys, 9)
 
 func state_default():
 	controls_loops()
