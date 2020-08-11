@@ -2,8 +2,9 @@ class_name Entity extends KinematicBody2D
 
 export(String) var TYPE = "ENEMY" 
 export(int) var SPEED = 0
-
-const MAXHEALTH = 2
+export(int) var MAXHEALTH = 0
+# Health set
+export(int) var health = MAXHEALTH
 
 # Where the player/enemy will move in 8 directions
 var movedir = dir.stopped
@@ -16,9 +17,6 @@ var spritedir = "down"
 
 # Variable to calculate knockback and make the entity unable to take damage
 var hitstun = 0
-
-# Health set
-var health = MAXHEALTH
 
 # Texture sprites variables
 var texture_default = null

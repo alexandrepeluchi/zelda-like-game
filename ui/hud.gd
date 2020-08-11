@@ -34,5 +34,6 @@ func _process(_delta):
 			# player.health (5.5) - last_heart (5) = 0.5 * 4 = 2 (frame 2 equal half heart)
 			heart.frame = (player.health - last_heart) * 4
 		if index < last_heart:
-			heart.frame = 4	
+			heart.frame = 4
+			
 	$keys.frame = player.keys

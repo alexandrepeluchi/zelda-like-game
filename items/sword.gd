@@ -3,7 +3,7 @@ extends Node2D
 var TYPE = null
 
 # The damage the sword does
-const DAMAGE = 1
+export(float) var DAMAGE = 0.5
 
 # How many items the entity can create that could be active at once
 var maxamount = 1

@@ -1,6 +1,6 @@
 extends Entity
 
-const DAMAGE = 1
+export(float) var DAMAGE = 0.25
 
 var movetimer_length = 15
 var movetimer = 0
