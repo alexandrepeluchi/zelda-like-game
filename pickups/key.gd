@@ -1,7 +1,4 @@
-extends Area2D
-
-func _ready():
-	connect("body_entered", self, "body_entered")
+extends Pickup
 	
 func body_entered(body):
 	# Checks if the body name is player and if player has less than 9 keys
