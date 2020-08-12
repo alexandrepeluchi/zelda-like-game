@@ -72,6 +72,7 @@ func anim_switch(animation):
 		
 # Function that calculates if entity suffers damage
 func damage_loop():
+	health = min(MAXHEALTH, health)
 	# If entity is knockback change sprites
 	if hitstun > 0:
 		hitstun -= 1
@@ -81,12 +82,13 @@ func damage_loop():
 		
 		# If enemy health is gone
 		if TYPE == "ENEMY" && health <= 0:
-			# Added death animation scene to a variable
-			var death_animation = preload("res://enemies/enemy_death.tscn").instance()
-			# Added intance to run death animation
-			get_parent().add_child(death_animation)
-			# Run death animation in last enemy position based in X and Y coordinates
-			death_animation.global_transform = global_transform
+			var drop = randi() % 3
+			# If drop equals 0 enemy drop a heart when killed (25% drop rate)
+			if drop == 0:
+				# Load heart pickup scene
+				instance_scene(preload("res://pickups/heart.tscn"))
+			# Load death animation scene
+			instance_scene(preload("res://enemies/enemy_death.tscn"))
 			# Delete itself
 			.queue_free()
 			
@@ -115,3 +117,10 @@ func use_item(item):
 		# Delete itself
 		newitem.queue_free()
 		
+func instance_scene(scene):
+	# Added intance to run the scene
+	var new_scene = scene.instance()
+	# Added to new_scene the last enemy position based in X and Y coordinates
+	new_scene.global_position = global_position
+	# Run the scene
+	get_parent().add_child(new_scene)
