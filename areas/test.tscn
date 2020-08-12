@@ -19,7 +19,7 @@ position = Vector2( 74.9146, 63.5272 )
 current = true
 
 [node name="enemies" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( -196606, 0, 0, -196604, 0, 0, -196601, 0, 0, 196604, 0, 0, 131083, 0, 0, 262138, 0, 0, 196610, 0, 0, 196614, 0, 0, 196623, 0, 0, 327674, 0, 0, 262157, 0, 0, 393210, 0, 0, 458746, 0, 0, 393218, 0, 0, 393222, 0, 0, 393228, 0, 0, 393231, 0, 0, 524284, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0 )
+tile_data = PoolIntArray( -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -262142, 0, 0, -262137, 0, 0, -196606, 0, 0, -196601, 0, 0, -131070, 0, 0, -131065, 0, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -31,10 +31,13 @@ __meta__ = {
 }
 
 [node name="key" parent="." instance=ExtResource( 6 )]
-position = Vector2( 77, 82 )
+position = Vector2( 137, 87 )
 
 [node name="key2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 77, -70 )
+position = Vector2( 79, -46 )
+
+[node name="key3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 53, 40 )
 
 [node name="key_door" parent="." instance=ExtResource( 7 )]
 position = Vector2( 72, 16 )
