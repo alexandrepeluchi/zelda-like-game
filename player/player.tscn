@@ -308,8 +308,8 @@ extents = Vector2( 7, 8 )
 script = ExtResource( 2 )
 TYPE = "PLAYER"
 SPEED = 70
-MAXHEALTH = 16
-health = 16
+MAXHEALTH = 8
+health = 8
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.5, 0 )
