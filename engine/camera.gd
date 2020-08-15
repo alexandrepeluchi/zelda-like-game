@@ -13,13 +13,11 @@ func _ready():
 
 func _process(_delta):
 	# Camera only work if it's on the same level of the player scene
-	# Subtracts 16 pixels for the HUD
-	var pos = get_node("../player").global_position - Vector2(0, 16)
-	# Find the grid positions to move the camera around the scene
-	var x = floor(pos.x / 160) * 160
-	var y = floor(pos.y / 128) * 128
-	# Set the global position of the camera 
-	global_position = Vector2(x, y)
+	var player_grid_pos = get_grid_pos(get_node("../player").global_position)	
+	# Sets the cameras global position to the players
+	global_position = player_grid_pos * SCREEN_SIZE
+	# Sets the camera grid position to the player grid position 
+	grid_pos = player_grid_pos
 	
 func get_grid_pos(pos):
 	# Subtracts the pixels y size of the HUD
