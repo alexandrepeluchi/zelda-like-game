@@ -1,5 +1,11 @@
 extends Camera2D
 
+# Sets the screen size
+const SCREEN_SIZE = Vector2(160, 124)
+# The size in pixel of the HUD
+const HUD_THICKNESS = 16
+var grid_pos = Vector2(0, 0)
+
 func _ready():
 	$area.connect("body_entered", self, "body_entered")
 	$area.connect("body_exited", self, "body_exited")
@@ -14,6 +20,15 @@ func _process(_delta):
 	var y = floor(pos.y / 128) * 128
 	# Set the global position of the camera 
 	global_position = Vector2(x, y)
+	
+func get_grid_pos(pos):
+	# Subtracts the pixels y size of the HUD
+	pos.y -= HUD_THICKNESS
+	# Find the grid positions to move the camera around the scene
+	var x = floor(pos.x / SCREEN_SIZE.x)
+	var y = floor(pos.y / SCREEN_SIZE.y)
+	# Return the global position of the camera 
+	return Vector2(x, y)
 
 # When an entity enters a certain part of the scene, it enables enemy actions
 func body_entered(body):
