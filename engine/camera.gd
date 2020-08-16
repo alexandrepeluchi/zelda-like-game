@@ -35,7 +35,7 @@ func get_enemies():
 	# Loop to find all enemies of a screen
 	for body in $area.get_overlapping_bodies():
 		# If the body is an enemy and it's not inside the array
-		if body.get("TYPE") == "ENEMY" && enemies.body == -1:
+		if body.get("TYPE") == "ENEMY" && enemies.find(body) == -1:
 			# Added the enemy to the array
 			enemies.append(body)
 	# Return the total of enemies in the scree
