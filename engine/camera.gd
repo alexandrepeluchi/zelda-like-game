@@ -27,6 +27,19 @@ func get_grid_pos(pos):
 	var y = floor(pos.y / SCREEN_SIZE.y)
 	# Return the global position of the camera 
 	return Vector2(x, y)
+	
+# Check and return how many enemies are in the screen
+func get_enemies():
+	# Array that contains all the enemies of a screen
+	var enemies = []
+	# Loop to find all enemies of a screen
+	for body in $area.get_overlapping_bodies():
+		# If the body is an enemy and it's not inside the array
+		if body.get("TYPE") == "ENEMY" && enemies.body == -1:
+			# Added the enemy to the array
+			enemies.append(body)
+	# Return the total of enemies in the scree
+	return enemies.size()
 
 # When an entity enters a certain part of the scene, it enables enemy actions
 func body_entered(body):
