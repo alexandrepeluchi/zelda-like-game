@@ -3,6 +3,8 @@ extends TileMap
 var block = preload("res://tiles/block.tscn")
 
 func _ready():
+	self.visible = false
+	
 	var block_tile = get_used_cells_by_id(0)
 	for tile in block_tile:
 		var block_instance = block.instance()
