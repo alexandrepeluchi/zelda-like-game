@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/dungeon.tres" type="TileSet" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://ui/hud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://pickups/key.tscn" type="PackedScene" id=6]
 [ext_resource path="res://tiles/enemy_door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://areas/enemy_block.gd" type="Script" id=9]
+[ext_resource path="res://tiles/enemy_block.tres" type="TileSet" id=10]
 
 [node name="Node" type="Node"]
 
@@ -20,7 +22,7 @@ visible = false
 current = true
 
 [node name="enemies" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( -327675, 0, 0 )
+tile_data = PoolIntArray( 458756, 0, 0, 458760, 0, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -100
@@ -39,3 +41,10 @@ rotation = 3.14159
 [node name="enemy_door2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 88, 8 )
 rotation = 3.14159
+
+[node name="enemy_block" type="TileMap" parent="."]
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393220, 0, 0, 393224, 0, 0, 458755, 0, 0, 458757, 0, 0, 458759, 0, 0 )
+script = ExtResource( 9 )
