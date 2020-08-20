@@ -1,5 +1,13 @@
 class_name Entity extends KinematicBody2D
 
+# Enemy vision
+var center = Vector2(0, 0)
+var radius = 40
+var angle_from = 135
+var angle_to = 225
+var color = Color(1.0, 0.0, 0.0, 0.5)
+var rotation_angle = 50
+
 export(String) var TYPE = "ENEMY" 
 export(int) var SPEED = 0
 export(int) var MAXHEALTH = 0
@@ -32,7 +40,7 @@ func _ready():
 	texture_default = $Sprite.texture
 	# Load hurt sprite
 	texture_hurt = load($Sprite.texture.get_path().replace(".png", "_hurt.png"))
-
+	
 # Loop function to move the player/enemy
 func movement_loop():
 	var motion
@@ -41,6 +49,7 @@ func movement_loop():
 		# Take the direction that player/enemy is going to move and multiply by speed
 		# Move entity with default SPEED
 		motion = movedir.normalized() * SPEED
+		change_vision(movedir)
 	else:
 		# Entity is knockback
 		motion = knockdir.normalized() * 125
@@ -54,12 +63,30 @@ func spritedir_loop():
 	match movedir:
 		dir.up:
 			spritedir = "up"
+			change_vision(dir.up)
 		dir.down:
 			spritedir = "down"
+			change_vision(dir.down)
 		dir.left:
 			spritedir = "left"
+			change_vision(dir.left)
 		dir.right:
 			spritedir = "right"
+			change_vision(dir.right)
+
+func change_vision(movedir):
+	if(movedir == dir.up):
+		angle_from = -45
+		angle_to = 45
+	if(movedir == dir.down):
+		angle_from = 135
+		angle_to = 225
+	if(movedir == dir.left):
+		angle_from = -45
+		angle_to = -135
+	if(movedir == dir.right):
+		angle_from = 45
+		angle_to = 135		
 
 # Function that switches the animations
 func anim_switch(animation):
@@ -124,3 +151,21 @@ func instance_scene(scene):
 	new_scene.global_position = global_position
 	# Run the scene
 	get_parent().add_child(new_scene)
+	
+func _draw():
+	#draw_circle(Vector2(0, 0), 20, Color(1.0, 0.0, 0.0))
+	draw_circle_arc_poly(center, radius, angle_from, angle_to, color)
+
+func _process(delta):
+	update()
+
+func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
+	var nb_points = 32
+	var points_arc = PoolVector2Array()
+	points_arc.push_back(center)
+	var colors = PoolColorArray([color])
+
+	for i in range(nb_points + 1):
+		var angle_point = deg2rad(angle_from + i * (angle_to - angle_from) / nb_points - 90)
+		points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
+	draw_polygon(points_arc, colors)
