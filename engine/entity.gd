@@ -154,7 +154,8 @@ func instance_scene(scene):
 	
 func _draw():
 	#draw_circle(Vector2(0, 0), 20, Color(1.0, 0.0, 0.0))
-	draw_circle_arc_poly(center, radius, angle_from, angle_to, color)
+	if TYPE == "ENEMY":
+		draw_circle_arc_poly(center, radius, angle_from, angle_to, color)
 
 func _process(delta):
 	update()
