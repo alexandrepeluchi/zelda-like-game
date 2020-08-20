@@ -22,7 +22,15 @@ visible = false
 current = true
 
 [node name="enemies" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( 458756, 0, 0, 458760, 0, 0 )
+tile_data = PoolIntArray( -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -262142, 0, 0, -262137, 0, 0, -196606, 0, 0, -196601, 0, 0, -131070, 0, 0, -131065, 0, 0 )
+
+[node name="enemy_block" type="TileMap" parent="."]
+z_index = -1
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 4, 0, 0, 5, 0, 0 )
+script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -100
@@ -41,10 +49,3 @@ rotation = 3.14159
 [node name="enemy_door2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 88, 8 )
 rotation = 3.14159
-
-[node name="enemy_block" type="TileMap" parent="."]
-tile_set = ExtResource( 10 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 393220, 0, 0, 393224, 0, 0, 458755, 0, 0, 458757, 0, 0, 458759, 0, 0 )
-script = ExtResource( 9 )
