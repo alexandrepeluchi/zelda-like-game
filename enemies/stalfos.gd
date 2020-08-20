@@ -2,7 +2,7 @@ extends Entity
 
 export(float) var DAMAGE = 0.25
 
-var movetimer_length = 15
+var movetimer_length = 300
 var movetimer = 0
 
 func _ready():

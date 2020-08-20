@@ -27,7 +27,7 @@ extents = Vector2( 7, 7 )
 
 [node name="stalfos" type="KinematicBody2D"]
 script = ExtResource( 1 )
-SPEED = 40
+SPEED = 10
 MAXHEALTH = 1
 health = 1
 
