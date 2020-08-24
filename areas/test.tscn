@@ -15,14 +15,15 @@
 [node name="hud" parent="." instance=ExtResource( 5 )]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 74.9146, 63.5272 )
+position = Vector2( 80, 111 )
 
 [node name="camera" parent="." instance=ExtResource( 4 )]
 visible = false
 current = true
 
 [node name="enemies" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -262142, 0, 0, -262137, 0, 0, -196606, 0, 0, -196601, 0, 0, -131070, 0, 0, -131065, 0, 0 )
+position = Vector2( 0, 1 )
+tile_data = PoolIntArray( -327677, 0, 0, -327674, 0, 0, -262142, 0, 0, -262137, 0, 0, -131070, 0, 0, -131065, 0, 0 )
 
 [node name="enemy_block" type="TileMap" parent="."]
 z_index = -1
