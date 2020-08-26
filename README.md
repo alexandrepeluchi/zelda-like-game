@@ -1,6 +1,6 @@
 # :video_game: Zelda like Game
 
-This repository is my implementation of the Godot tutorial from youtube made by **[fornclake's](https://www.youtube.com/channel/UCcvec1pEInJKoyoXAr8MgUw)** the "[Godot 3.0 Zelda Like Tutorial](https://www.youtube.com/playlist?list=PLv0bAfkzWSiY4d_FJlQTlFOZh34nrlJZY)", if you want to learn how to programming in Godot, have too much or too little experience i personally recommends this tutorial.
+This repository is my implementation of the Godot tutorial from youtube made by **[fornclake's](https://www.youtube.com/channel/UCcvec1pEInJKoyoXAr8MgUw)** the "[Godot 3.0 Zelda Like Tutorial](https://www.youtube.com/playlist?list=PLv0bAfkzWSiY4d_FJlQTlFOZh34nrlJZY)", if you want to learn how to programming in Godot, have too much or too little experience, I personally recommend this tutorial.
 
 The tutorial is a top-down game based on "*The Legend of Zelda: Link's Awakening*" from Gameboy.
 
@@ -98,6 +98,6 @@ Again, the credits go to **[fornclake's](https://www.youtube.com/playlist?list=P
 
 ## Thank You
 
-Finally, I would like to say that, I never had so much fun programming something, I am in constant learning, but using Godot I realized that I can do anything and mainly fulfill my dream of creating a game, for people to enjoy, have fun and transmit emotions and positivity to those who play.
+Finally, I would like to say that, I never had so much fun programming something, I am in constant learning, but using Godot I realized that I can do anything, and mainly fulfill my dream of creating a game for people have fun, transmit emotions and positivity to those who play.
 
 I hope this repository help someone. :wave:
